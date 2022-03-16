@@ -1,6 +1,6 @@
 galaxy_info:
   author: allan
-  description: Ansible projet role
+  description: Ansible Gestion Etudiant
   company: allan
 
   # If the issue tracker for your role is not on github, uncomment the

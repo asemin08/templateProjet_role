@@ -1,12 +1,12 @@
 ---
 - name: "Download data from git repo"
   git:
-    repo: 'https://github.com/asemin08/templateProjet'
+    repo: 'https://github.com/asemin08/GestionEtudiants'
     version: 'main'
-    dest: '/home/ec2-user/templateProjet'
+    dest: '/home/ec2-user/GestionEtudiants'
 
 - name: "Build an image for projet"
-  command: "chdir=/home/ec2-user/templateProjet/docker docker build -t projet:latest  --build-arg branch=main --build-arg depoGit=templateProjet --build-arg autheurGit=asemin08 --build-arg tagImage=3.8.4-openjdk-17-slim --no-cache ."
+  command: "chdir=/home/ec2-user/GestionEtudiants/docker docker build -t projet:latest  --build-arg branch=main --build-arg depoGit=GestionEtudiants --build-arg autheurGit=asemin08 --build-arg tagImage=3.8.4-openjdk-17-slim --no-cache ."
 
 - name: "Docker-compose up l'applis web qui va up la bdd (le phpadmin est dans le docker compose pour le debug)"
-  shell: /usr/local/bin/docker-compose -f /home/ec2-user/templateProjet/docker/docker-compose.yaml up -d spring
+  shell: /usr/local/bin/docker-compose -f /home/ec2-user/GestionEtudiants/docker/docker-compose.yaml up -d spring
